@@ -1,0 +1,40 @@
+html
+    heade
+    title
+    style
+    body
+        div(id='div1',class='select')
+            ul.nav  <!--设置class简写--> 
+                li#li1  <!--设置id简写-->
+                    input(type='submit',value='提交')
+                li
+                    a(href='http://www.baidu.com') 百度
+            div(class='aa bb cc')   <!-- 此种写法所有属性都可以使用 -->
+            div(class = ['aa','bb','cc'])   <!--此种写法(数组)只有class属性可以使用，其他属性均不能使用（便于动态化使用）-->
+        p 我的名字：#{name}  <!--插入变量-->
+        div
+            xxx
+            |abc    <!--加竖线表示后面为标签的内容，防止jade解析为标签-->
+        div(sytle='width:200px;height:200px;background:red')    <!-- 此种写法所有属性都可以使用-->
+        div(style = {width:'200px',height:'200px',background:'red'}) <!-- 此种写法(json)为style属性特有（便于动态化使用）-->
+        div&attributes({id:'xx',class:'yy'})    <!-- 其他属性若也想采用json方式对属性赋值，使用&attributes即可-->
+    script(src='a.js')
+    script alert('123');
+    //写大段代码的方式：
+    script
+        |var oBtn = document.getElementById('btn');
+        |oBtn.onclick = function(){
+        | alert('123');
+        |};
+        // (1) 利用|表示原样输出        
+    script.
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            alert('123');
+        };
+        // (2)  利用.表示标签内部的所有内容都原样输出
+    script
+        include demo.js
+        // (3) 利用inlude引入外部文件
+
+
