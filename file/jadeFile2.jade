@@ -1,0 +1,20 @@
+html
+    head
+    title
+    body
+        div 计算结果：#{a + b}  <!--jade可以对变量进行简单的计算-->
+        div(style=json)
+        div(class=arr class='active')   <!--active会自动添加到arr中-->
+        div(class=arr)
+        -var x =1;  // -表示该行及后面的所有行都是代码
+        -var y =2;
+        div=x*y
+        -for(var i = 0 ; i < arr.length ; i++ )
+            div=arr[i] 
+        case b  
+            when 1 
+                div 1111
+            when 2
+                div 2222
+            default
+                div ···· 
