@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html>
+        <head></head>
+        <title></title>
+        <style>
+            li{
+                list-style: none;
+                position: relative;
+            }
+            li img{
+                width: 500px;
+                height: 200px;
+            }
+            .move{
+                position: absolute;
+                top: 30%;
+                left: 3%;
+            }
+        </style>
+        <body>
+            <ul>
+                <% for(var i=0;i<banners.length ; i++){ %>
+                    <li>
+                        <img src="<%= banners[i].src %>" alt="">
+                        <div class="move">
+                            <h3><%= banners[i].title %></h3>
+                            <h4><%= banners[i].sub_title %></h4>
+                        </div>
+                        <a href="/article?id=<%= articles[i].id %>">
+                            <h4><%= articles[i].title %></h4>
+                            <p><%= articles[i].summary %></p>
+                        </a>
+                    </li>
+                <%　} %>
+            </ul>
+        </body>
+    </html>
