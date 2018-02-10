@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            border: none;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2><%= article_data.title %></h2>
+    <h4><%= article_data.sDate %></h4>
+    <h4><%= article_data.author %></h4>
+    <img src="<%= article_data.author_src %>" alt="">
+    <h4>阅读量：<%= article_data.n_like %></h4>
+    <p><%- article_data.content %></p>  <!--这里使用<%-直接输出,添加的<p></p>将为p标签直接输出-->
+</body>
+</html>
